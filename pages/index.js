@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import Error from 'next/error';
 import StoryList from '../componentns/StoryList';
+import Layout from '../componentns/Layout';
 
 const Index = ({ stories }) => {
   console.log(stories);
@@ -8,10 +9,9 @@ const Index = ({ stories }) => {
     return <Error statusCode={503} />
   }
   return (
-    <div>
-      <h1>hacker next</h1>
+    <Layout>
       <StoryList stories={stories} />
-    </div>
+      </Layout>
   )
 }
 
