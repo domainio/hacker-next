@@ -9,9 +9,9 @@ const Index = ({ stories }) => {
     return <Error statusCode={503} />
   }
   return (
-    <Layout>
+    <Layout title="Hacker Next">
       <StoryList stories={stories} />
-      </Layout>
+    </Layout>
   )
 }
 
