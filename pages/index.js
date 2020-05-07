@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import Error from 'next/error';
+import StoryList from '../componentns/StoryList';
 
 const Index = ({ stories }) => {
   console.log(stories);
@@ -9,11 +10,7 @@ const Index = ({ stories }) => {
   return (
     <div>
       <h1>hacker next</h1>
-      <div>
-        {stories.map(story => (
-          <h2 key={story.id}>{story.title}</h2>
-        ))}
-      </div>
+      <StoryList stories={stories} />
     </div>
   )
 }
