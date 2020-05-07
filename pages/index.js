@@ -13,11 +13,21 @@ const Index = ({ stories, page }) => {
     <Layout title="Hacker Next" description="A Hacker News clone made with Next.js">
       <StoryList stories={stories} />
       <footer>
-        Page ({page}) > 
+        Page ({page}) >
         <Link href={`/?page=${page}`}>
           <a> Next Page ({page + 1})</a>
         </Link>
       </footer>
+      <style jsx>{`
+        footer {
+          padding: 1em;
+        }
+        footer a {
+          font-weight: bold;
+          color: black;
+          text-decoration: none;
+        }
+      `}</style>
     </Layout>
   )
 }
