@@ -10,6 +10,7 @@ const Layout = ({ children, title, description }) => {
       </Head>
       <div className="container">
         <nav>
+          <span className="back-button">&#x2b05;</span>
           <Link href="/">
             <a>
               <span className="main-title">Hacker Next</span>
@@ -34,6 +35,10 @@ const Layout = ({ children, title, description }) => {
         }
         nav .main-title {
           font-weight: bold;
+        }
+        nav .back-button {
+          fonr-size: 0.9rem;
+          padding-right: 1em; 
         }
       `}</style>
       <style global jsx>{`
