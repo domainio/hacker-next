@@ -5,7 +5,6 @@ import Layout from '../componentns/Layout';
 import Link from 'next/link';
 
 const Index = ({ stories, page }) => {
-  // console.log(stories);
   if (!stories || stories.length === 0) {
     return <Error statusCode={503} />
   }

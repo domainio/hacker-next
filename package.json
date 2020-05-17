@@ -6,7 +6,7 @@
   "license": "MIT",
   "author": "domainio",
   "scripts": {
-    "dev": "next"
+    "dev": "NODE_OPTIONS='--inspect' next"
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",

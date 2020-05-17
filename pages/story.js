@@ -1,20 +1,27 @@
 import fetch from 'isomorphic-fetch';
 import Error from 'next/error';
 import Layout from '../componentns/Layout';
+import CommentList from '../componentns/CommentList';
 
 const Story = ({ story, storyId }) => {
   if (!story) {
     return <Error status={503} />
   }
+  console.log('commnet.length: ', story.comments.length);
   return (
     <Layout title={story.title} className>
       <main>
-        <h1><a href={story.url}>{story.title}</a></h1>
+        <h1 className="story-title"><a href={story.url}>{story.title}</a></h1>
         <div className="story-details">
           <strong>{story.points} points</strong>
           <strong>{story.comments_count} comments</strong>
           <strong>{story.time_ago}</strong>
         </div>
+        {story.comments.length > 0 ? (
+          <CommentList comments={story.comments} />
+        ) : (
+            <div>No comments for this story</div>
+          )}
       </main>
       <style jsx>{`
         main {
@@ -25,6 +32,10 @@ const Story = ({ story, storyId }) => {
           margin: 0;
           font-weight: 300;
           padding-bottom: 0.5em;
+          
+        }
+        .story-title a {
+          text-decoration: none;
         }
         .story-title a:hover {
           text-decoration: underline;
@@ -52,12 +63,11 @@ Story.getInitialProps = async ({ query }) => {
   try {
     const res = await fetch(`https://api.hnpwa.com/v0/item/${storyId}.json`)
     story = await res.json();
-    console.log('story: ', story);
   } catch (err) {
     console.log(err);
     story = null;
   }
-  
+
   return { story, storyId };
 }
 
