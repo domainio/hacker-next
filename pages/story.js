@@ -9,7 +9,7 @@ const Story = ({ story, storyId }) => {
   }
   console.log('commnet.length: ', story.comments.length);
   return (
-    <Layout title={story.title} className>
+    <Layout title={story.title} className="main" backButton>
       <main>
         <h1 className="story-title"><a href={story.url}>{story.title}</a></h1>
         <div className="story-details">
