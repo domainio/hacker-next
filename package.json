@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "node server.js",
     "start": "NODE_ENV=production node server.js",
-    "build": "next build"
+    "build": "next build",
+    "heroku-postbuild": "next build"
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
