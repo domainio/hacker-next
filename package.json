@@ -6,12 +6,15 @@
   "license": "MIT",
   "author": "domainio",
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next"
+    "dev": "node server.js",
+    "start": "NODE_ENV=production node server.js",
+    "build": "next build"
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
     "next": "^9.3.6",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "sw-precache-webpack-plugin": "^1.0.0"
   }
 }
